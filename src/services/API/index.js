@@ -33,6 +33,13 @@ export const fetchPartners = async () => {
   ]
 };
 
+export const insertPartner = async (data) => {
+  // const token = await getToken();
+  // return patch('/slideshows', token);
+  await mock();
+  return {...data, id: Math.floor(Math.random() * (74 - 27) + 27)};
+};
+
 export const updatePartner = async (data) => {
   // const token = await getToken();
   // return patch('/slideshows', token);

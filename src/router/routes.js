@@ -9,6 +9,7 @@ const EditSlideshowItem = () => import('../UI/pages/Home/EditSlideshowItem');
 const NewsEvents = () => import('../UI/pages/NewsEvents');
 const Partners = () => import('../UI/pages/Partners');
 const EditPartner = () => import('../UI/pages/Partners/EditPartner');
+const CreatePartner = () => import('../UI/pages/Partners/CreatePartner');
 
 export default [
   {
@@ -55,6 +56,11 @@ export default [
             name: 'Edit Partner',
             component: EditPartner,
             props: true
+          },
+          {
+            path: 'create',
+            name: 'Add Partner',
+            component: CreatePartner
           }
         ]
       }

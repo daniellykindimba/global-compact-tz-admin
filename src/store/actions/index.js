@@ -1,6 +1,6 @@
 import { getUser } from '../../services/auth';
 import router from '../../router';
-import { updateSlideshowItem, fetchSlideshowItems, fetchPartners, updatePartner } from '../../services/API'
+import { updateSlideshowItem, fetchSlideshowItems, fetchPartners, updatePartner, insertPartner } from '../../services/API'
 
 export const setup = async({ commit }) => {
   try {
@@ -86,5 +86,23 @@ export const editPartner = async ({ state, commit }, data) => {
   } catch (error) {
     commit('UPDATING_PARTNER', false);
     console.log("Error updating partner:", error);
+  }
+}
+
+export const createPartner = async ({ state, commit }, data) => {
+  try {
+    commit('CREATING_PARTNER', true);
+    const newPartner = await insertPartner(data);
+    let partners = state.partners;
+    if(!partners)
+      partners = [];
+
+    partners.push(newPartner);
+    commit('CREATING_PARTNER', false);
+    commit('SET_PARTNERS', partners);
+    router.replace('/partners');
+  } catch (error) {
+    commit('CREATING_PARTNER', false);
+    console.log("Error creating partner:", error);
   }
 }

@@ -23,8 +23,12 @@ export default {
     state.fetchingPartners = fetchingPartners;
   },
 
-  UPDATING_PARTNER(state, updatingPartner){
-    state.updatingPartner = updatingPartner;
+  UPDATING_PARTNER(state, status){
+    state.updatingPartner = status;
+  },
+
+  CREATING_PARTNER(state, status){
+    state.creatingPartner = status;
   },
 
   SET_PARTNERS(state, partners){

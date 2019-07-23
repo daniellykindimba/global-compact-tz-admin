@@ -23,6 +23,12 @@
 
 <template>
   <div class="home">
+    <v-btn depressed color="accent" class="mr-0 black--text"
+      to="partners/create">
+      <v-icon left size="20">add</v-icon>
+      Add Partner
+      &nbsp;
+    </v-btn>
     <Loader v-if="fetchingPartners" />
 
     <v-card v-else-if="!partners" class="mt-2 mx-2 d-inline-flex" flat color="red lighten-3">
