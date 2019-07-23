@@ -12,7 +12,7 @@
           </v-layout>
         </v-card-title>
 
-        <upload-image v-model="image" />
+        <upload-image height="200px" v-model="image" />
 
         <v-card-text class="pb-2">
           <v-text-field

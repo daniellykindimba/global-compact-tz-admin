@@ -12,9 +12,11 @@
           </v-layout>
         </v-card-title>
 
-        <upload-image v-model="logo" />
+        <div class="mx-4" style="width: 120px">
+          <upload-image height="auto" v-model="logo" />
+        </div>
 
-        <v-card-text class="pb-2">
+        <v-card-text class="pb-2 px-4">
           <v-text-field
             label="Partner Name"
             id="partnerName"
