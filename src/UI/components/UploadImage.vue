@@ -6,11 +6,11 @@
     justify-content: center;
     text-align: center;
     border-radius: 3px;
-    border: 1px solid #ddd;
     font-weight: 100;
     font-size: 1.3em;
     line-height: 1.25em;
     cursor: pointer;
+    border: 1px solid #ddd;
     background-color: #f5f5f5;
     background-size: cover;
     background-position: center;
@@ -52,9 +52,9 @@
 <template>
   <div>
     <label class="image-picker-item" for="impactImage1"
-      :style="{ backgroundImage: 'url(' + image + ')', height: height}"
+      :style="{height: height}"
       :class="{'has-image': image !== null}">
-      <img :src="image" alt="" :style="{height: height}">
+      <img :src="image" alt="" :style="{maxHeight: height}">
       <span v-if="image !== null">Change Image</span>
       <span class="black--text" v-else>Click to pick image</span>
     </label>
