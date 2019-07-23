@@ -5,17 +5,14 @@ export const login = async (data) => {
   return await post('/users/login', data);
 };
 
-export const fetchUsers = async () => {
+export const fetchSlideshowItems = async () => {
   const token = await getToken();
   return get('/users', token);
 };
 
-export const fetchRoles = async () => {
+export const updateSlideshowItem = async (data) => {
   // const token = await getToken();
-  // return get('/roles', token);
+  // return patch('/slideshows', token);
   await mock();
-  return [{
-    name: "Create Admin Users",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, dignissimos quam nobis doloribus."
-  }];
+  return data;
 };
