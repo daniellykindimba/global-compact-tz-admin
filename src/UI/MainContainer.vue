@@ -1,12 +1,12 @@
 <template>
   <v-app>
     <SideBar />
-    <v-toolbar app color="primary">
+    <v-toolbar flat app color="primary">
       <v-toolbar-title class="white--text">
-        Admin Panel
+        {{ currentPage }}
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn @click="logout">
+      <v-btn depressed @click="logout">
         Logout
       </v-btn>
     </v-toolbar>
@@ -34,9 +34,9 @@ export default {
     }
   },
   computed: {
-    // name () {
-    //   return this.$route.name
-    // },
+    currentPage () {
+      return this.$route.name
+    },
     // list () {
     //   return this.$route.matched.filter((route) => route.name || route.meta.label )
     // }

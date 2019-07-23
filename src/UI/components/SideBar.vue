@@ -22,7 +22,7 @@
     </v-toolbar>
     <v-divider></v-divider>
 
-    <v-list dense class="pt-0">
+    <v-list dense class="pt-3">
       <v-list-tile
         v-for="link in links"
         :key="link.title"
@@ -37,7 +37,7 @@
       </v-list-tile>
     </v-list>
 
-    <v-list dense class="pt-0">
+    <v-list dense class="pt-0 mt-3">
       <v-list-tile>
         <v-list-tile-content>
           <v-list-tile-title>
@@ -73,12 +73,12 @@
         default: () => [
           {
             title : 'Projects',
-            url : '/',
+            url : '/projects',
             icon: 'dashboard'
           },
           {
             title : 'Organisations',
-            url : '/about',
+            url : '/organisations',
             icon: 'supervisor_account'
           }
         ]
@@ -88,17 +88,17 @@
         default: () => [
           {
             title : 'Home',
-            url : '/',
+            url : '/home',
             icon: 'home'
           },
           {
             title : 'News & Events',
-            url : '/about',
+            url : '/news-events',
             icon: 'event'
           },
           {
             title : 'Partners',
-            url : '/about',
+            url : '/partners',
             icon: 'bubble_chart'
           }
         ]
