@@ -22,7 +22,15 @@
     </v-toolbar>
     <v-divider></v-divider>
 
-    <v-list dense class="pt-3">
+    <v-list-tile class="pt-0 mt-3 mb-0">
+      <v-list-tile-content>
+        <v-list-tile-title class="body-1">
+          DATA &amp; STATS
+        </v-list-tile-title>
+      </v-list-tile-content>
+    </v-list-tile>
+
+    <v-list dense class="mt-0 pt-0">
       <v-list-tile
         v-for="link in links"
         :key="link.title"
@@ -32,22 +40,18 @@
         </v-list-tile-action>
 
         <v-list-tile-content>
-          <v-list-tile-title>{{ link.title }}</v-list-tile-title>
+          <v-list-tile-title class="subheading">{{ link.title }}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-    </v-list>
 
-    <v-list dense class="pt-0 mt-3">
-      <v-list-tile>
+      <v-list-tile class="pt-0 mt-3 mb-0">
         <v-list-tile-content>
-          <v-list-tile-title>
-            Content Management
+          <v-list-tile-title class="body-1">
+            SITE CONTENT
           </v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-    </v-list>
 
-    <v-list dense class="pt-0">
       <v-list-tile
         v-for="link in cmsLinks"
         :key="link.title"
@@ -57,7 +61,7 @@
         </v-list-tile-action>
 
         <v-list-tile-content>
-          <v-list-tile-title>{{ link.title }}</v-list-tile-title>
+          <v-list-tile-title class="subheading">{{ link.title }}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
@@ -92,14 +96,19 @@
             icon: 'home'
           },
           {
-            title : 'News & Events',
-            url : '/news-events',
-            icon: 'event'
-          },
-          {
             title : 'Partners',
             url : '/partners',
             icon: 'bubble_chart'
+          },
+          {
+            title : 'News',
+            url : '/news',
+            icon: 'record_voice_over'
+          },
+          {
+            title : 'Events',
+            url : '/events',
+            icon: 'event'
           }
         ]
       }

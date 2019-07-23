@@ -1,13 +1,13 @@
 <template>
   <div class="home">
-    <h1>News &amp; Events</h1>
+    <h1>Events</h1>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'NewsEvents',
+  name: 'Events',
   components: {
 
   }

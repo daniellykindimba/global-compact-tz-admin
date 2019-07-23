@@ -6,10 +6,11 @@ const Projects = () => import('../UI/pages/Projects');
 const Organisations = () => import('../UI/pages/Organisations');
 const Home = () => import('../UI/pages/Home');
 const EditSlideshowItem = () => import('../UI/pages/Home/EditSlideshowItem');
-const NewsEvents = () => import('../UI/pages/NewsEvents');
 const Partners = () => import('../UI/pages/Partners');
 const EditPartner = () => import('../UI/pages/Partners/EditPartner');
 const CreatePartner = () => import('../UI/pages/Partners/CreatePartner');
+const News = () => import('../UI/pages/News');
+const Events = () => import('../UI/pages/Events');
 
 export default [
   {
@@ -42,11 +43,6 @@ export default [
         ]
       },
       {
-        path: 'news-events',
-        name: 'News & Events',
-        component: NewsEvents
-      },
-      {
         path: 'partners',
         name: 'Partners',
         component: Partners,
@@ -63,6 +59,16 @@ export default [
             component: CreatePartner
           }
         ]
+      },
+      {
+        path: 'news',
+        name: 'News',
+        component: News
+      },
+      {
+        path: 'events',
+        name: 'Events',
+        component: Events
       }
     ]
   },
