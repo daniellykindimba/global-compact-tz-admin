@@ -28,8 +28,8 @@ export const fetchPartners = async () => {
   // return get('/partners', token);
   await mock();
   return [
-    { id: 1, name: "CRDB", image: "https://jestrux.github.io/global-compact-tz/assets/img/partners/strategic/crdb.png" },
-    { id: 2, name: "Vodacom Tanzania" , image: "https://jestrux.github.io/global-compact-tz/assets/img/partners/strategic/vodacom.jpg" }
+    { id: 1, name: "CRDB", logo: "https://jestrux.github.io/global-compact-tz/assets/img/partners/strategic/crdb.png" },
+    { id: 2, name: "Vodacom Tanzania" , logo: "https://jestrux.github.io/global-compact-tz/assets/img/partners/strategic/vodacom.jpg" }
   ]
 };
 

@@ -4,10 +4,11 @@ const MainContainer = () => import('../UI/MainContainer');
 const Login = () => import('../UI/pages/Login');
 const Projects = () => import('../UI/pages/Projects');
 const Organisations = () => import('../UI/pages/Organisations');
-const NewsEvents = () => import('../UI/pages/NewsEvents');
-const Partners = () => import('../UI/pages/Partners');
 const Home = () => import('../UI/pages/Home');
 const EditSlideshowItem = () => import('../UI/pages/Home/EditSlideshowItem');
+const NewsEvents = () => import('../UI/pages/NewsEvents');
+const Partners = () => import('../UI/pages/Partners');
+const EditPartner = () => import('../UI/pages/Partners/EditPartner');
 
 export default [
   {
@@ -47,7 +48,15 @@ export default [
       {
         path: 'partners',
         name: 'Partners',
-        component: Partners
+        component: Partners,
+        children: [
+          {
+            path: 'edit/:partnerId',
+            name: 'Edit Partner',
+            component: EditPartner,
+            props: true
+          }
+        ]
       }
     ]
   },

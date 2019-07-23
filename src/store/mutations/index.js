@@ -17,5 +17,17 @@ export default {
 
   SET_SLIDESHOW_ITEMS(state, items){
     state.slideshowItems = items;
+  },
+
+  FETCHING_PARTNERS(state, fetchingPartners){
+    state.fetchingPartners = fetchingPartners;
+  },
+
+  UPDATING_PARTNER(state, updatingPartner){
+    state.updatingPartner = updatingPartner;
+  },
+
+  SET_PARTNERS(state, partners){
+    state.partners = partners;
   }
 }
