@@ -1,6 +1,6 @@
 import { getUser } from '../../services/auth';
 import router from '../../router';
-import { updateSlideshowItem } from '../../services/API'
+import { updateSlideshowItem, fetchSlideshowItems } from '../../services/API'
 
 export const setup = async({ commit }) => {
   try {
@@ -19,6 +19,19 @@ export const setAuthUser = async ({ commit }, authUser) => {
   try {
     commit('SET_AUTH_USER', authUser);
   } catch (error) {
+    console.log("Error fetching users:", error);
+  }
+}
+
+export const getSlideshowItems = async ({ commit }) => {
+  try {
+    commit('FETCHING_SLIDESHOW_ITEMS', true);
+    const slideshowItems = await fetchSlideshowItems();
+    commit('FETCHING_SLIDESHOW_ITEMS', false);
+    commit('SET_SLIDESHOW_ITEMS', slideshowItems);
+  } catch (error) {
+    commit('FETCHING_SLIDESHOW_ITEMS', false);
+    commit('SET_SLIDESHOW_ITEMS', null);
     console.log("Error fetching users:", error);
   }
 }
