@@ -1,5 +1,5 @@
 <style>
-  .image-picker{
+  .image-picker-item{
     position: relative;
     display: flex !important;
     align-items: center;
@@ -14,10 +14,15 @@
     background-color: #f5f5f5;
     background-size: cover;
     background-position: center;
-    height: 200px;
   }
 
-  .image-picker span{
+  .image-picker-item img{
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .image-picker-item span{
     position: absolute;
     top: 0;
     left: 0;
@@ -27,27 +32,29 @@
     align-items: center;
     justify-content: center;
     pointer-events: none;
+    padding: 0.6em;
   }
 
-  .image-picker.has-image:not(:hover) span{
+  .image-picker-item.has-image:not(:hover) span{
     opacity: 0;
   }
 
-  .image-picker.has-image span{
+  .image-picker-item.has-image span{
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
   }
 
-  .image-picker + input{
+  .image-picker-item + input{
     display: none;
   }
 </style>
 
 <template>
   <div>
-    <label class="image-picker" for="impactImage1"
-      :style="{ backgroundImage: 'url(' + image + ')' }"
+    <label class="image-picker-item" for="impactImage1"
+      :style="{ backgroundImage: 'url(' + image + ')', height: height}"
       :class="{'has-image': image !== null}">
+      <img :src="image" alt="" :style="{height: height}">
       <span v-if="image !== null">Change Image</span>
       <span class="black--text" v-else>Click to pick image</span>
     </label>
@@ -59,7 +66,13 @@
 
 export default {
   name: 'UploadImage',
-  props: ['value'],
+  props: {
+    value: String,
+    height: {
+      type: String,
+      default: 'auto'
+    }
+  },
   data(){
     return {
       image: this.value
