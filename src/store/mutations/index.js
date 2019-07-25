@@ -19,8 +19,16 @@ export default {
     state.slideshowItems = items;
   },
 
-  FETCHING_PARTNERS(state, fetchingPartners){
-    state.fetchingPartners = fetchingPartners;
+  FETCHING_PROJECTS(state, status){
+    state.fetchingProjects = status;
+  },
+
+  SET_PROJECTS(state, projects){
+    state.projects = projects;
+  },
+
+  FETCHING_PARTNERS(state, status){
+    state.fetchingPartners = status;
   },
 
   UPDATING_PARTNER(state, status){

@@ -1,6 +1,6 @@
 import { getUser } from '../../services/auth';
 import router from '../../router';
-import { updateSlideshowItem, fetchSlideshowItems, fetchPartners, updatePartner, insertPartner } from '../../services/API'
+import { updateSlideshowItem, fetchSlideshowItems, fetchPartners, updatePartner, insertPartner, fetchProjects } from '../../services/API'
 
 export const setup = async({ commit }) => {
   try {
@@ -53,6 +53,19 @@ export const editSlideshowItem = async ({ state, commit }, data) => {
   } catch (error) {
     commit('UPDATING_SLIDESHOW_ITEM', false);
     console.log("Error updating slideshow item:", error);
+  }
+}
+
+export const getProjects = async ({ commit }) => {
+  try {
+    commit('FETCHING_PROJECTS', true);
+    const projects = await fetchProjects();
+    commit('FETCHING_PROJECTS', false);
+    commit('SET_PROJECTS', projects);
+  } catch (error) {
+    commit('FETCHING_PROJECTS', false);
+    commit('SET_PROJECTS', null);
+    console.log("Error fetching projects:", error);
   }
 }
 

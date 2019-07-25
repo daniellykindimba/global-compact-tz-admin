@@ -1,5 +1,6 @@
 import { mock, post, get } from "./setup";
 import { getToken } from "../auth";
+import sampleProjects from "./sampleProjects";
 
 export const login = async (data) => {
   return await post('/users/login', data);
@@ -21,6 +22,13 @@ export const updateSlideshowItem = async (data) => {
   // return patch('/slideshowItems', token);
   await mock();
   return data;
+};
+
+export const fetchProjects = async () => {
+  // const token = await getToken();
+  // return get('/projects', token);
+  await mock();
+  return sampleProjects;
 };
 
 export const fetchPartners = async () => {

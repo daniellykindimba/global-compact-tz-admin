@@ -52,9 +52,9 @@
       }
     },
     mounted(){
-      const slide = this.partners.find(s => s.id == parseInt(this.partnerId));
-      this.logo = slide.logo;
-      this.name = slide.name;
+      const partner = this.partners.find(s => s.id == parseInt(this.partnerId));
+      this.logo = partner.logo;
+      this.name = partner.name;
     },
     data () {
       return {

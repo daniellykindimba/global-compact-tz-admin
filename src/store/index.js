@@ -16,7 +16,9 @@ export default new vuex.Store({
     fetchingPartners: false,
     updatingPartner: false,
     creatingPartner: false,
-    partners: null
+    partners: null,
+    fetchingProjects: false,
+    projects: null
   },
   actions,
   mutations
