@@ -1,7 +1,7 @@
 const descriptions = [
   "Every day girls around the world are fighting for their freedom. This International Day of the Girl - join them and raise your voice.",
   "The second annual Goalkeepers will take place the 25-26th of September, at Jazz at Lincoln Center in New York City, as world leaders gather for the UN General Assembly. The Global Goals Awards ceremony will be held on the evening of the 25th, followed by a daytime event on the 26th.",
-  "Infrastructure is one of Australia’s largest employers and is responsible for half of the country’s greenhouse gas emissions, the opportunity this industry can have on delivering Australia’s commitment to the SDGs is significant. V2.0 of the IS rating tool is mandated by almost all transport agencies and provides the framework for those projects to achieving the Sustainable Development Goals.",
+  "Infrastructure is one of Tanzania’s largest employers and is responsible for half of the country’s greenhouse gas emissions, the opportunity this industry can have on delivering Tanzania’s commitment to the SDGs is significant. V2.0 of the IS rating tool is mandated by almost all transport agencies and provides the framework for those projects to achieving the Sustainable Development Goals.",
   "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.",
   "Achieve gender equality and empower all women and girls.",
   "Ensure availability and sustainable management of water and sanitation for all.",
@@ -72,6 +72,7 @@ const colors = [
 
 export default projects.map((name, index) => ({
   name,
+  id: index + 1,
   description: descriptions[index],
   image: images[index],
   organisation: organisations[index],

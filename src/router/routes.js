@@ -3,6 +3,7 @@ const MainContainer = () => import('../UI/MainContainer');
 // Pages
 const Login = () => import('../UI/pages/Login');
 const Projects = () => import('../UI/pages/Projects');
+const ProjectDetail = () => import('../UI/pages/Projects/Detail');
 const Organisations = () => import('../UI/pages/Organisations');
 const Home = () => import('../UI/pages/Home');
 const EditSlideshowItem = () => import('../UI/pages/Home/EditSlideshowItem');
@@ -22,7 +23,23 @@ export default [
       {
         path: 'projects',
         name: 'Projects',
-        component: Projects
+        redirect: 'projects/list',
+        component: {
+          render (c) { return c('router-view') }
+        },
+        children: [
+          {
+            path: 'list',
+            name: 'Projects',
+            component: Projects
+          },
+          {
+            path: ':projectId',
+            name: 'Project Detail',
+            component: ProjectDetail,
+            props: true
+          }
+        ]
       },
       {
         path: 'organisations',

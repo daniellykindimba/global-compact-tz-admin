@@ -100,7 +100,7 @@
                     <v-divider class="my-2" vertical></v-divider>
                     <v-spacer></v-spacer>
                   </template>
-                  <v-btn flat color="grey darken-2">
+                  <v-btn :to="`/projects/${project.id}`" flat color="grey darken-2">
                     <v-icon left>remove_red_eye</v-icon>
                     <span v-if="project.approved">VIEW &nbsp;</span>Details
                   </v-btn>
