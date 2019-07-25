@@ -80,11 +80,11 @@
             url : '/projects',
             icon: 'dashboard'
           },
-          {
-            title : 'Organisations',
-            url : '/organisations',
-            icon: 'supervisor_account'
-          }
+          // {
+          //   title : 'Organisations',
+          //   url : '/organisations',
+          //   icon: 'supervisor_account'
+          // }
         ]
       },
       cmsLinks: {
@@ -100,16 +100,16 @@
             url : '/partners',
             icon: 'bubble_chart'
           },
-          {
-            title : 'News',
-            url : '/news',
-            icon: 'record_voice_over'
-          },
-          {
-            title : 'Events',
-            url : '/events',
-            icon: 'event'
-          }
+          // {
+          //   title : 'News',
+          //   url : '/news',
+          //   icon: 'record_voice_over'
+          // },
+          // {
+          //   title : 'Events',
+          //   url : '/events',
+          //   icon: 'event'
+          // }
         ]
       }
     }
