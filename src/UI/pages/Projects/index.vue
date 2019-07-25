@@ -51,15 +51,11 @@
                 <v-img class="white--text" v-else style="height: 200px" :src="project.image"
                   gradient="to bottom, rgba(100, 115, 201, .3), rgba(25, 32, 72, .9)">
                   <v-card-title primary-title class="align-end fill-height">
-                    <h3 class="title pb-2">{{project.name}}</h3>
+                    <h3 class="title pl-2 pb-2">{{project.name}}</h3>
                   </v-card-title>
                 </v-img>
 
-                <!-- <v-card-title primary-title class="pb-0 px-4"> -->
-                    <!-- <h3 class="title">{{project.name}}</h3> -->
-                <!-- </v-card-title> -->
-
-                <v-card-text class="text-left px-3 pt-3 pb-3">
+                <v-card-text class="text-left px-4 pt-3 pb-3">
                   <!-- <div class="mt-3 mb-1 body-2 black--text">
                     Julien King&nbsp; • &nbsp;<span class="grey--text text--darken-1">Organisation Lead</span>
                   </div>
@@ -79,9 +75,11 @@
                   </div>
 
                   <!-- <v-divider class="mt-4 mb-3" /> -->
-                  <h5 class="subheading mt-2 mb-1">Project Lead &nbsp;<span class="grey--text text--darken-1">(Ben Ally)</span></h5>
-                  <span class="subheading primary--text">
-                    +2679122034
+                  <h5 class="subheading mt-2 mb-1">Project Lead
+                    <!-- &nbsp;<span class="grey--text text--darken-1">(Ben Ally)</span> -->
+                  </h5>
+                  <span class="subheading grey--text text--darken-2">
+                    Ben Ally ( <span class="primary--text">+2679122034</span> )
                   </span>
                 </v-card-text>
 
