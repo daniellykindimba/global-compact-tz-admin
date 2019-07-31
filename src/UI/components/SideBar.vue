@@ -105,11 +105,11 @@
           //   url : '/news',
           //   icon: 'record_voice_over'
           // },
-          // {
-          //   title : 'Events',
-          //   url : '/events',
-          //   icon: 'event'
-          // }
+          {
+            title : 'Events',
+            url : '/events',
+            icon: 'event'
+          }
         ]
       }
     }
