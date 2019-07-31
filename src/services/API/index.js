@@ -55,3 +55,49 @@ export const updatePartner = async (data) => {
   await mock();
   return data;
 };
+
+export const fetchEvents = async () => {
+  // const token = await getToken();
+  // return get('/events', token);
+  await mock();
+  return [
+    {
+      id: 1,
+      date: new Date("Aug 21, 2019"),
+      title: "Tanzania Annual SDGs Summit",
+      location: "Diamond Jubilee, Dar es Salaam",
+      description: "2019 installation of the event with attendees from within and outside the country.",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSePjEgJ5LpF5vPmOhSewFKFKoJff9KIKUSkNHvFY4fNzBU0Bw/viewform",
+    },
+    {
+      id: 2,
+      date: new Date("Sep 5, 2019"),
+      title: "Anti Poaching Seminar",
+      location: "AICC, Arusha",
+      description: "TANAPA hosts three weeks of training to park maintainers on how to deal with poachers.",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSePjEgJ5LpF5vPmOhSewFKFKoJff9KIKUSkNHvFY4fNzBU0Bw/viewform",
+    },
+    {
+      id: 3,
+      date: new Date("Nov 7, 2019"),
+      title: "Affordable Renewable Energy Training",
+      location: "Bikwi Hall, Singida",
+      description: "TAREA experts will teach Singida citizens that renewable energy need not be cutting edge and expensive.",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSePjEgJ5LpF5vPmOhSewFKFKoJff9KIKUSkNHvFY4fNzBU0Bw/viewform",
+    }
+  ]
+};
+
+export const insertEvent = async (data) => {
+  // const token = await getToken();
+  // return post('/events', token);
+  await mock();
+  return {...data, id: Math.floor(Math.random() * (74 - 27) + 27)};
+};
+
+export const updateEvent = async (data) => {
+  // const token = await getToken();
+  // return patch('/events', token);
+  await mock();
+  return data;
+};
