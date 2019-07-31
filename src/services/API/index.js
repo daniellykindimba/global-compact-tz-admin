@@ -3,7 +3,8 @@ import { getToken } from "../auth";
 import sampleProjects from "./sampleProjects";
 
 export const login = async (data) => {
-  return await post('/users/login', data);
+  // return await post('/users/login', data);
+  return {"_id":"5ccafa30fd5d3b7d9d5c3480","firstName":"Gabby","lastName":"Mushi","displayName":"Gabby Mushi","role":"5d30339cd19cad4b4d326089","email":"gabrielpatrickmushi@gmail.com","phoneNumber":"713122995","idType":"nationalId","idNumber":"123456","userType":"user","verifiedAt":"2019-05-02T14:09:52.537Z","token":"JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2NhZmEzMGZkNWQzYjdkOWQ1YzM0ODAiLCJpYXQiOjE1NjQwNTA0Mzd9.bS_S0JWeCfGaxm9fMDSNIUxCFpML8XmXhHp5a8oaUMY"};
 };
 
 export const fetchSlideshowItems = async () => {
