@@ -12,6 +12,7 @@ const EditPartner = () => import('../UI/pages/Partners/EditPartner');
 const CreatePartner = () => import('../UI/pages/Partners/CreatePartner');
 const News = () => import('../UI/pages/News');
 const Events = () => import('../UI/pages/Events');
+const AddEvent = () => import('../UI/pages/Events/Add');
 
 export default [
   {
@@ -85,7 +86,25 @@ export default [
       {
         path: 'events',
         name: 'Events',
-        component: Events
+        redirect: 'events/list',
+        component: {
+          render (c) { return c('router-view') }
+        },
+        children: [
+          {
+            path: 'list',
+            name: 'List',
+            component: Events,
+          },
+          {
+            path: 'add',
+            name: 'Add Event',
+            component: AddEvent,
+            meta: {
+              isDetail: true
+            }
+          }
+        ]
       }
     ]
   },
