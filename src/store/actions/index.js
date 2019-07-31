@@ -1,6 +1,6 @@
 import { getUser } from '../../services/auth';
 import router from '../../router';
-import { updateSlideshowItem, fetchSlideshowItems, fetchPartners, updatePartner, insertPartner, fetchProjects } from '../../services/API'
+import { updateSlideshowItem, fetchSlideshowItems, fetchPartners, updatePartner, insertPartner, fetchProjects, fetchEvents, insertEvent, updateEvent } from '../../services/API'
 
 export const setup = async({ commit }) => {
   try {
@@ -117,5 +117,56 @@ export const createPartner = async ({ state, commit }, data) => {
   } catch (error) {
     commit('CREATING_PARTNER', false);
     console.log("Error creating partner:", error);
+  }
+}
+
+export const getEvents = async ({ commit }) => {
+  try {
+    commit('FETCHING_EVENTS', true);
+    const events = await fetchEvents();
+    commit('FETCHING_EVENTS', false);
+    commit('SET_EVENTS', events);
+  } catch (error) {
+    commit('FETCHING_EVENTS', false);
+    commit('SET_EVENTS', null);
+    console.log("Error fetching partners:", error);
+  }
+}
+
+export const createEvent = async ({ state, commit }, data) => {
+  try {
+    commit('CREATING_EVENT', true);
+    const newEvent = await insertEvent(data);
+    let events = state.events;
+    if(!events)
+      events = [];
+
+    events.push(newEvent);
+    commit('CREATING_EVENT', false);
+    commit('SET_EVENTS', events);
+    router.replace('/events');
+  } catch (error) {
+    commit('CREATING_EVENT', false);
+    console.log("Error creating partner:", error);
+  }
+}
+
+export const editEvent = async ({ state, commit }, data) => {
+  try {
+    commit('UPDATING_EVENT', true);
+    const changedEvent = await updateEvent(data);
+
+    let events = state.events.map(event => {
+      if(event.id === changedEvent.id)
+        return changedEvent;
+
+      return event;
+    });
+    commit('UPDATING_EVENT', false);
+    commit('SET_EVENTS', events);
+    router.replace('/events');
+  } catch (error) {
+    commit('UPDATING_EVENT', false);
+    console.log("Error updating event:", error);
   }
 }
