@@ -3,7 +3,13 @@
     <SideBar />
     <v-toolbar flat app color="primary">
       <v-toolbar-title class="white--text">
-        {{ currentPage }}
+        <v-layout align-center>
+          <v-btn @click="$router.back()" v-if="currentPageIsDetail" icon>
+            <v-icon color="white">arrow_back</v-icon>
+          </v-btn>
+          &nbsp;
+          {{ currentPage }}
+        </v-layout>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn depressed @click="logout">
@@ -36,6 +42,9 @@ export default {
   computed: {
     currentPage () {
       return this.$route.name
+    },
+    currentPageIsDetail () {
+      return this.$route.meta && this.$route.meta.isDetail
     },
     // list () {
     //   return this.$route.matched.filter((route) => route.name || route.meta.label )
