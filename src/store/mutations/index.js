@@ -41,5 +41,21 @@ export default {
 
   SET_PARTNERS(state, partners){
     state.partners = partners;
+  },
+
+  FETCHING_EVENTS(state, status){
+    state.fetchingEvents = status;
+  },
+
+  CREATING_EVENT(state, status){
+    state.creatingEvent = status;
+  },
+
+  UPDATING_EVENT(state, status){
+    state.updatingEvent = status;
+  },
+
+  SET_EVENTS(state, events){
+    state.events = events;
   }
 }
