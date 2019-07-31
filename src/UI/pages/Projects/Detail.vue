@@ -276,7 +276,7 @@ section{
 <template>
   <div>
     <div class="detail-subheader">
-      <v-btn flat>
+      <v-btn flat @click="$router.back()">
         <v-icon left>arrow_back</v-icon>
         Back to projects
       </v-btn>
