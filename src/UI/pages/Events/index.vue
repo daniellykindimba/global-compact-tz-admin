@@ -37,7 +37,8 @@
                   <v-icon size="16" left>location_on</v-icon> {{ event.location }} <br />
                 </v-layout>
                 <v-layout align-center class="mt-2">
-                  <v-icon size="16" left>event</v-icon> {{ event.date }} <br />
+                  <v-icon size="16" left>event</v-icon>
+                  {{ getFormattedDate(event.date) }} <br />
                 </v-layout>
                 <v-layout align-center class="mt-2">
                   <v-icon size="16" left>link</v-icon>
@@ -56,7 +57,7 @@
 
             <v-card-actions class="pb-4">
               <v-spacer></v-spacer>
-              <v-btn :to="`/events/${event.id}`" flat color="grey darken-2">
+              <v-btn :to="`/events/${event.id}/edit`" flat color="grey darken-2">
                 <v-icon left size="18">edit</v-icon>
                 Edit Event
               </v-btn>
@@ -70,18 +71,21 @@
 
 <script>
 import { mapState } from 'vuex';
+import { format as formatDate } from 'date-fns';
 
 export default {
   name: 'Events',
   mounted(){
-    console.log(this.events);
-    if(!this.events && !this.fetchingEvents){
-      console.log("No events, fetching some!");
+    if(!this.events && !this.fetchingEvents)
       this.$store.dispatch('getEvents');
-    }
   },
   computed: {
     ...mapState(['events', 'fetchingEvents'])
+  },
+  methods: {
+    getFormattedDate(date){
+      return formatDate(new Date(date), 'Do MMMM YYYY');
+    }
   }
 }
 </script>
