@@ -13,6 +13,7 @@ const CreatePartner = () => import('../UI/pages/Partners/CreatePartner');
 const News = () => import('../UI/pages/News');
 const Events = () => import('../UI/pages/Events');
 const AddEvent = () => import('../UI/pages/Events/Add');
+const EditEvent = () => import('../UI/pages/Events/Edit');
 
 export default [
   {
@@ -103,6 +104,12 @@ export default [
             meta: {
               isDetail: true
             }
+          },
+          {
+            path: ':eventId/edit',
+            name: 'Edit Event',
+            component: EditEvent,
+            props: true
           }
         ]
       }
