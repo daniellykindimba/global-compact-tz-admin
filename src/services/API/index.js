@@ -97,7 +97,7 @@ export const insertEvent = async (data) => {
 
 export const updateEvent = async (data) => {
   // const token = await getToken();
-  // return patch('/events', token);
+  // return patch(`/events/${data.id}`, token, data);
   await mock();
   return data;
 };
